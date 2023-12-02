@@ -17,7 +17,10 @@ class Citas {
 
     agregarCita(cita) {
         this.citas = [...this.citas, cita]
-        console.log(this.citas)
+    }
+
+    eliminarCita(id) {
+        this.citas = this.citas.filter(cita => cita.id !== id)
     }
 }
 
@@ -82,6 +85,14 @@ class UserInterface {
                     sintomasParrafo.innerHTML = `
                     <span class='font-weight-bolder'>Sintomas: </span> ${sintomas}`
 
+            
+            //Boton para eliminar
+            const btnEliminar = document.createElement('button')
+            btnEliminar.classList.add('btn', 'btn-danger', 'mr-2')
+            btnEliminar.innerHTML = 'Eliminar'
+
+            btnEliminar.onclick = () => eliminarCita(id)
+
 
             //Agregar al divCita
             divCita.appendChild(mascotaParrafo)
@@ -90,7 +101,9 @@ class UserInterface {
             divCita.appendChild(fechaParrafo)
             divCita.appendChild(horaParrafo)
             divCita.appendChild(sintomasParrafo)
+            divCita.appendChild(btnEliminar)
             
+            //Agregamos citas
             contenedorCitas.appendChild(divCita)
         } )
         
@@ -169,4 +182,14 @@ function reiniciarObjeto() {
     citaObjeto.fecha = ''
     citaObjeto.hora = ''
     citaObjeto.sintomas = ''
+}
+
+function eliminarCita (id) {
+    adminCitas.eliminarCita(id)
+
+    //Mostramos mensaje
+    ui.imprimirAlerta('Se elimino la cita')
+
+    //Refrescamos las citas
+    ui.imprimirCitas(adminCitas)
 }

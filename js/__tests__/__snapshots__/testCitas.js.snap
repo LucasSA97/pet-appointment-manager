@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Probar la clase Citas Actualizar cita 1`] = `
+Citas {
+  "citas": [
+    {
+      "fecha": "02/10/2023",
+      "hora": "10:30",
+      "id": 1702651200895,
+      "mascota": "Ema",
+      "propietario": "Lucas",
+      "sintomas": "Solo come",
+      "telefono": "3241315",
+    },
+  ],
+}
+`;
+
+exports[`Probar la clase Citas Agregar una nueva cita  1`] = `
+Citas {
+  "citas": [
+    {
+      "fecha": "02/10/2023",
+      "hora": "10:30",
+      "id": 1702651200895,
+      "mascota": "Poli",
+      "propietario": "Lucas",
+      "sintomas": "Solo duerme",
+      "telefono": "3241315",
+    },
+  ],
+}
+`;
+
+exports[`Probar la clase Citas Eliminar cita 1`] = `
+Citas {
+  "citas": [],
+}
+`;
